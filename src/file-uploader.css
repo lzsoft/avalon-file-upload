@@ -1,0 +1,10 @@
+file-uploader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+file-uploader > input {
+    display: none;
+}

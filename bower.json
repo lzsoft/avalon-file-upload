@@ -1,0 +1,12 @@
+{
+    "name": "file-uploader",
+    "description": "",
+    "authors": ["JingAn Chen"],
+    "license": "MIT",
+    "keywords": ["router", "SPA", "web-components"],
+    "homepage": "https://github.com/lzsoft/file-uploader",
+    "ignore": ["**/.*"],
+    "dependencies": {
+        "front-end-infrastructure": "lzsoft/front-end-infrastructure"
+    }
+}
