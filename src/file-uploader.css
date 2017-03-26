@@ -1,10 +1,34 @@
 file-uploader {
+    --transition-duration: 0.2s;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../res/transparent.png');
+    transition: background-image var(--transition-duration);
 }
 
 file-uploader > input {
     display: none;
+}
+
+file-uploader > i {
+    opacity: 1;
+    padding: 10px;
+    border-radius: 50%;
+    transition: opacity var(--transition-duration), background-color var(--transition-duration);
+}
+
+file-uploader[style] > i {
+    opacity: 0;
+}
+
+file-uploader[style]:hover > i {
+    opacity: 1;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.25);
 }
