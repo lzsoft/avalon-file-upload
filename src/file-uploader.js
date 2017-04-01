@@ -1,6 +1,6 @@
 window.customElements.define('file-uploader', class extends HTMLElement {
     static get observedAttributes() {
-        return ['data-json', 'data-id'];
+        return ['data-id'];
     }
     constructor() {
         super();
@@ -16,9 +16,9 @@ window.customElements.define('file-uploader', class extends HTMLElement {
                 }).then(function(result) {
                     result.json().then(function(json) {
                         if (json) {
-                            self.setAttribute("data-json", JSON.stringify(json));
+                            self.setAttribute("data-id", json.id);
                         }
-                    }).catch(function(e) {
+                    }).catch(function() {
                         // Returning info is not a json
                     });
                 });
@@ -30,40 +30,21 @@ window.customElements.define('file-uploader', class extends HTMLElement {
     }
     attributeChangedCallback(name, oldValue, newValue) {
         let self = this;
-        switch (name) {
-            case 'data-id':
-                self.idChange(newValue);
-                break;
-            case 'data-json':
-                self.jsonChange(newValue);
-                break;
-        }
-    }
-    idChange(newValue) {
-        let self = this;
-        if (self.hasAttribute("data-meta-url")) {
+        if (self.hasAttribute("data-meta-url") && newValue) {
             window.Lzsoft.Api.Core(self.getAttribute("data-meta-url"), {
                 requestContentType: "application/json",
                 requestData: JSON.stringify({ id: newValue })
             }).then(function(result) {
                 result.json().then(function(json) {
                     if (json) {
-                        self.setAttribute("data-json", JSON.stringify(json));
+                        if (json.url && json.contentCategory === "image") {
+                            self.style.backgroundImage = `url(${json.url})`;
+                        }
                     }
-                }).catch(function(e) {
+                }).catch(function() {
                     // Returning info is not a json
                 });
             });
-        }
-    }
-    jsonChange(newValue) {
-        let self = this;
-        let json = JSON.parse(newValue || "{}");
-        if (!self.hasAttribute("data-id") && json.id) {
-            self.setAttribute("data-id", json.id);
-        }
-        if (json.url && json.contentCategory === "image") {
-            self.style.backgroundImage = `url(${json.url})`;
         }
     }
 });
