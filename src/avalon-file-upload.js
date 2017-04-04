@@ -23,7 +23,7 @@ window.customElements.define('avalon-file-upload', class extends HTMLElement {
     async attributeChangedCallback(name, oldValue, newValue) {
         let self = this;
         if (self.hasAttribute("data-url") && newValue) {
-            let json = await (await window.Lzsoft.Api.Get(self.getAttribute("data-url"), { id: newValue }));
+            let json = await (await window.Lzsoft.Api.Get(self.getAttribute("data-url"), { id: newValue })).json();
             if (json) {
                 if (json.url && json.contentCategory === "image") {
                     self.style.backgroundImage = `url(${json.url})`;
