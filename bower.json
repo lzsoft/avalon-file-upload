@@ -7,6 +7,6 @@
     "homepage": "https://github.com/lzsoft/avalon-file-upload",
     "ignore": ["**/.*"],
     "dependencies": {
-        "front-end-infrastructure": "lzsoft/front-end-infrastructure"
+        "avalon-front-end-infrastructure": "lzsoft/avalon-front-end-infrastructure"
     }
 }
