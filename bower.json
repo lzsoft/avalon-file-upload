@@ -4,9 +4,9 @@
     "authors": ["JingAn Chen"],
     "license": "MIT",
     "keywords": ["router", "SPA", "web-components"],
-    "homepage": "https://github.com/lzsoft/avalon-file-upload",
+    "homepage": "https://github.com/tingting-io/avalon-file-upload",
     "ignore": ["**/.*"],
     "dependencies": {
-        "avalon-front-end-infrastructure": "lzsoft/avalon-front-end-infrastructure"
+        "avalon-front-end-infrastructure": "tingting-io/avalon-front-end-infrastructure"
     }
 }
