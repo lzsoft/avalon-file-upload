@@ -1,4 +1,4 @@
-window.customElements.define('avalon-file-upload', class extends HTMLElement {
+window.customElements.define('avalon-file-upload', class extends window.HTMLTinplateElement {
     static get observedAttributes() {
         return ['data-id'];
     }
@@ -7,7 +7,6 @@ window.customElements.define('avalon-file-upload', class extends HTMLElement {
     }
     connectedCallback() {
         let self = this;
-        window.Lzsoft.Import.ByTagImport(self);
         self.querySelector("input").addEventListener("change", async function() {
             if (this.files[0] && self.hasAttribute("data-url")) {
                 let json = await window.Lzsoft.Api.Put(self.getAttribute("data-url"), this.files[0]);
