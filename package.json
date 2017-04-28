@@ -1,12 +1,10 @@
 {
     "name": "avalon-file-upload",
-    "description": "",
-    "authors": ["JingAn Chen"],
+    "main": "avalon-file-upload.html",
     "license": "MIT",
-    "keywords": ["router", "SPA", "web-components"],
     "homepage": "https://github.com/tingting-io/avalon-file-upload",
-    "ignore": ["**/.*"],
     "dependencies": {
         "avalon-front-end-infrastructure": "tingting-io/avalon-front-end-infrastructure"
-    }
+    },
+    "flat": true
 }
