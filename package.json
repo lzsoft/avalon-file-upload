@@ -1,6 +1,7 @@
 {
     "name": "avalon-file-upload",
     "main": "avalon-file-upload.html",
+    "version": "1.0.0",
     "license": "MIT",
     "homepage": "https://github.com/tingting-io/avalon-file-upload",
     "dependencies": {
