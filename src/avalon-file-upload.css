@@ -8,26 +8,22 @@ avalon-file-upload {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-image: url('../res/transparent.png');
+    background-image: none;
     transition: background-image var(--transition-duration);
 }
-
-avalon-file-upload > input {
+avalon-file-upload>input {
     display: none;
 }
-
-avalon-file-upload > i {
+avalon-file-upload>i {
     opacity: 1;
     padding: 10px;
     border-radius: 50%;
     transition: opacity var(--transition-duration), background-color var(--transition-duration);
 }
-
-avalon-file-upload[style] > i {
+avalon-file-upload[style]>i {
     opacity: 0;
 }
-
-avalon-file-upload[style]:hover > i {
+avalon-file-upload[style]:hover>i {
     opacity: 1;
     color: white;
     background-color: rgba(0, 0, 0, 0.25);

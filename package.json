@@ -1,11 +1,20 @@
 {
     "name": "avalon-file-upload",
-    "main": "avalon-file-upload.html",
     "version": "1.0.0",
     "license": "MIT",
     "homepage": "https://github.com/tingting-io/avalon-file-upload",
     "dependencies": {
         "avalon-front-end-infrastructure": "tingting-io/avalon-front-end-infrastructure"
     },
-    "flat": true
+    "flat": true,
+    "scripts": {
+        "build": "npm run build:uglify-es && npm run build:uglifycss && npm run build:html-minifier",
+        "build:html-minifier": "html-minifier src/avalon-file-upload.html -o min/avalon-file-upload.html",
+        "build:uglify-es": "uglifyjs src/avalon-file-upload.js -c -m -o min/avalon-file-upload.js",
+        "build:uglifycss": "uglifycss src/avalon-file-upload.css --output min/avalon-file-upload.css",
+        "init": "npm run init:uglify-es && npm run init:uglifycss && npm run init:html-minifier",
+        "init:html-minifier": "npm install html-minifier -g",
+        "init:uglify-es": "npm install uglify-es -g",
+        "init:uglifycss": "npm install uglifycss -g"
+    }
 }
