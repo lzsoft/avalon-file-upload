@@ -1,5 +1,5 @@
 document.currentScript.loadSameNameHTML(function(template) {
-    window.customElements.define('avalon-file-upload', class extends window.HTMLTinplateElement {
+    window.customElements.define('avalon-file-upload', class extends window.HTMLElement {
         static get observedAttributes() {
             return ['data-id'];
         }
