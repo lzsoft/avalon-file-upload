@@ -26,7 +26,7 @@ document.currentScript.loadSameNameHTML(function(template) {
             if (self.hasAttribute("data-url") && newValue) {
                 let json = await window.tingting.api.get(self.getAttribute("data-url"), { id: newValue });
                 if (json) {
-                    if (json.url && json.contentCategory === "image") {
+                    if (json.url && json.content_category === "image") {
                         self.style.backgroundImage = `url(${json.url})`;
                     }
                 }
